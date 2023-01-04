@@ -4,16 +4,7 @@
 
 
 
-Hello, welcome to Part 2. If you haven't read part 1, I strongly suggest you read it to gain a deeper understanding about the intuition about matrices more properly. This time, we are ending off the 2 part series with Convolution and Max Pooling Math. By the end of this, I will use all the knowledge over the 2 parts and build a network to do MNIST.
-
-
-
-### Adressing comments made about my previous post
-
-
-
-Before, I start with the 2nd post, I will address the comments made about the post. A lot of people said that using numpy meant that I wasn't doing it from "scratch". While this is true, I actually disagree because numpy's operations are incredibly simple to code out and can be done by a 2 year old child with an ipad using scratch. The use of numpy is a helpful abstraction to remove some of the matrix multiplication code and it is much much faster. So while I do agree, you can implement my math very easily and do the exact same thing I did at a sixteenth of the speed with 100 more lines of code. The second piece of criticism I got was from the sigma notation fan club who said my math could have been more easily expressed with sigma notation. While this may be true, you must understand that a sigma implies a loop, and I would rather die than use an unnecessary loop. This is because loops are a plague on society, if you wanna know why, you can DM me about it, but essentially it boils down to the fact that all loops look the same. Anyways, while I may joke around and all, a huge thanks to those who sat through my nonsense and decided to comment, you guys deserve an A+. Now, let us do the math.
-
+Hello, welcome to Part 2. If you haven't read part 1, I strongly suggest you read it to gain a deeper understanding about the intuition about matrices more properly. This time, we are ending off the 2 part series with Convolution and Max Pooling Math. By the end of this, I will use all the knowledge over the 2 parts and build a network to do MNIST
 
 
 ##Changing and swapping notation
@@ -385,11 +376,11 @@ $$
 \end{aligned}
 $$
 
-Voila, after that pain, we have done it. In this case $\text{pad}$ refers to adding zeroes all around and $\text{rot}$ refers to a 180 degree rotation of the data.
+Voila, after that pain, we have done it. In this case $\text{pad}$ refers to adding zeroes all around and $\text{rot}$ refers to a 180 degree rotation of the data. The amount of $\text{pad}$ is one less than the size of the kernel.
 
 ##Max-pooling (Single Layer)
 
-The derivative of a max-pooling operation is 
+Now we will find the derivative of a max-pooling layer. Any sort of ravel 
 
 
 

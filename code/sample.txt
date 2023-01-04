@@ -1,0 +1,21 @@
+import numpy as np
+from numpy.fft import fft2, ifft2
+
+def conv2d(input_array, kernel_array):
+
+    input_rows, input_cols = input_array.shape
+    kernel_rows, kernel_cols = kernel_array.shape
+
+    output_rows = input_rows + kernel_rows - 1
+    output_cols = input_cols + kernel_cols - 1
+
+    padding = ((output_rows - input_rows) // 2, (output_cols - input_cols) // 2)
+    padded_input = np.pad(input_array, padding, mode="constant", constant_values=0)
+    padded_kernel = np.pad(kernel_array, padding, mode="constant", constant_values=0)
+
+    input_fft = fft2(padded_input)
+    kernel_fft = fft2(padded_kernel)
+    output_fft = input_fft * kernel_fft
+    output_array = np.real(ifft2(output_fft))
+
+    return output_array
