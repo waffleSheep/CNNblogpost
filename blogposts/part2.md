@@ -2,9 +2,7 @@
 
 ## Part 2: Convolution and Max Pooling
 
-
-
-Hello, welcome to Part 2. If you haven't read part 1, I strongly suggest you read it to gain a deeper understanding about the intuition about matrices more properly. This time, we are ending off the 2 part series with Convolution and Max Pooling Math. By the end of this, I will use all the knowledge over the 2 parts and build a network to do MNIST
+Hello, welcome to Part 2. If you haven't read part 1, I strongly suggest you read it to gain a deeper understanding about the intuition about matrices more properly. This time, we are ending off the 2 part series with Convolution and Max Pooling Math. By the end of this, I will use all the knowledge over the 2 parts and build a network to do MNIST,
 
 
 ##Changing and swapping notation
@@ -218,7 +216,7 @@ W*\frac{\partial c}{\partial Y}
 \end{aligned}
 $$
 
-Now let us move onto $\frac{\partial Y}{\partial W}$ by beginning de novo with the individual derivatives. There are 36 of them. While that is a lot, this number will be 112013989021 times large later on so this is like a briefer haha. (pain)
+Now let us move onto $\frac{\partial Y}{\partial W}$ by beginning de novo with the individual derivatives. There are 36 of them. While that is a lot, it is the most, we will handle in this article.
 
 $$
 \frac{\partial {y}_{11}}{\partial {w}_{11}} = {x}_{11} \quad
@@ -380,7 +378,57 @@ Voila, after that pain, we have done it. In this case $\text{pad}$ refers to add
 
 ##Max-pooling (Single Layer)
 
-Now we will find the derivative of a max-pooling layer. Any sort of ravel 
+Now we will find the derivative of a max-pooling layer. Any sort of operation which involves the movement of numbers around has rather simple solution when it comes to the propogation of derivatives backwards. Before we think of max-pooling let us just think of a simple max function $\text{max}:\mathbb{R}^{n} \rightarrow \mathbb{R}$. We feed a simple vector into this function
+
+$$
+\begin{aligned}
+\mathbf{x}&=\begin{bmatrix}
+5 \\
+9 \\
+7 \\
+6 \\
+\end{bmatrix}\\
+\mathbf{y}&=max \left( \begin{bmatrix}
+5 \\
+9 \\
+7 \\
+6 \\
+\end{bmatrix} \right)\\
+&=9
+\end{aligned}
+$$
+
+A way of thinking of the max function is thinking of it as multiplying every value that is not the max by 0 and multiplying the max by 1 and summing. In this case $\mathbf{y} = 0 \cdot 5 + 1 \cdot 9 + 0 \cdot 7 + 0 \cdot 6$. Which is why we can understand that derivative of $\mathbf{y}$ with respect to $\mathbf{x}$ as such
+
+$$
+\frac{\partial \mathbf{y}}{\partial \mathbf{x}}=\begin{bmatrix}
+0 \\
+1 \\
+0 \\
+0 \\
+\end{bmatrix}
+$$
+
+This is the same as max-pooling but the minor differen
+
+
+Now we will find the derivative of a max-pooling layer. Any sort of operation which involves the movement of numbers around has rather simple solution when it comes to the propogation of derivatives backwards. Before we think
 
 
 
+Now we will find the derivative of a max-pooling layer. Any sort of operation which involves the movement of numbers around has rather simple solution when it comes to the propogation of derivatives backwards. Before we think
+
+
+efasef
+
+
+Now we will find the derivative of a max-pooling layer. Any sort of operation which involves the movement of numbers around has rather simple solution when it comes to the propogation of derivatives backwards. Before we think
+
+
+Now we will find the derivative of a max-pooling layer. Any sort of operation which involves the movement of numbers around has rather simple solution when it comes to the propogation of derivatives backwards. Before we think
+
+
+Now we will find the derivative of a max-pooling layer. Any sort of operation which involves the movement of numbers around has rather simple solution when it comes to the propogation of derivatives backwards. Before we think
+
+
+afe
