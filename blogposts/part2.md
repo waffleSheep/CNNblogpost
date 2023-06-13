@@ -30,7 +30,7 @@ Actually, it has been more than a year. I have been doing a lot of random other 
 
 Since we are shifting notation to the denomenator layout, I will recap and also rewrite the derivatives we calculated last time. I will also make it more compact than last time since writing the full thing out may be quite confused.
 
-The equations for feed forward are
+The equations for Feed Forward are
 
 $$
 \begin{aligned}
@@ -47,7 +47,21 @@ $$
 \frac{\partial c}{\partial \mathbf{a}_L} = \frac{2}{n}(\mathbf{a}_L-\mathbf{y})
 $$
 
-The derivative for
+The derivative for Element-Wise Activation is
+
+$$
+\frac{\partial c}{\partial \mathbf{z}_i} = \frac{\partial c}{\partial \mathbf{a}_i} \text{diag}(\sigma^{'}(\mathbf{z}_i))
+$$
+
+The derivative for Linear Layer is
+
+$$
+\begin{aligned}
+\frac{\partial c}{\partial \mathbf{a}_i} &= \frac{\partial c}{\partial \mathbf{z}_{i+1}}W_i\\
+\frac{\partial c}{\partial \mathbf{b}_i} &=\frac{\partial c}{\partial \mathbf{z}_{i+1}}\\
+\frac{\partial c}{\partial W_i} &= \mathbf{a}_i\frac{\partial c}{\partial \mathbf{z}_i}
+\end{aligned}
+$$
 
 ## Convolution (Single Layer)
 
