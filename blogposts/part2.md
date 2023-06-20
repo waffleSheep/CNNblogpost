@@ -50,16 +50,16 @@ $$
 The derivative for Element-Wise Activation is
 
 $$
-\frac{\partial c}{\partial \mathbf{z}_i} = \frac{\partial c}{\partial \mathbf{a}_i} \text{diag}(\sigma^{'}(\mathbf{z}_i))
+\frac{\partial c}{\partial \mathbf{z}_i} =  \text{diag}(\sigma^{'}(\mathbf{z}_i)) \frac{\partial c}{\partial \mathbf{a}_i}
 $$
 
 The derivative for Linear Layer is
 
 $$
 \begin{aligned}
-\frac{\partial c}{\partial \mathbf{a}_i} &= \frac{\partial c}{\partial \mathbf{z}_{i+1}}W_i\\
+\frac{\partial c}{\partial \mathbf{a}_i} &= W_i^T \frac{\partial c}{\partial \mathbf{z}_{i+1}}\\
 \frac{\partial c}{\partial \mathbf{b}_i} &=\frac{\partial c}{\partial \mathbf{z}_{i+1}}\\
-\frac{\partial c}{\partial W_i} &= \mathbf{a}_i\frac{\partial c}{\partial \mathbf{z}_i}
+\frac{\partial c}{\partial W_i} &= \frac{\partial c}{\partial \mathbf{z}_{i+1}}\mathbf{a}_i^T
 \end{aligned}
 $$
 
